@@ -1,11 +1,11 @@
 {
   "name": "massimopress",
-  "version": "0.7.5-rc0",
+  "version": "0.7.5-rc1",
   "description": "Vite & Vue powered static site generator",
   "main": "dist/node/index.js",
   "typings": "types/index.d.ts",
   "bin": {
-    "vitepress": "bin/vitepress.js"
+    "massimopress": "bin/vitepress.js"
   },
   "files": [
     "bin",
