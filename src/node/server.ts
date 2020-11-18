@@ -153,18 +153,27 @@ function getNextAndPrev(themeConfig: any, pagePath: string) {
     if (!pagePath.startsWith(k)) {
       return
     }
-    sidebar[k].forEach((sidebarItem: { children?: SideBarLink[] }) => {
-      if (!sidebarItem.children) {
-        return
+    sidebar[k].forEach(
+      (sidebarItem: {
+        text: string
+        link: string
+        children?: SideBarLink[]
+      }) => {
+        if (sidebarItem.children) {
+          sidebarItem.children.forEach((candidate) => {
+            candidates.push(candidate)
+          })
+        } else if (sidebarItem.link) {
+          candidates.push(sidebarItem)
+        }
       }
-      sidebarItem.children.forEach((candidate) => {
-        candidates.push(candidate)
-      })
-    })
+    )
   })
 
-  const path = pagePath.replace(/\.(md|html)$/, '')
-  const currentLinkIndex = candidates.findIndex((v) => v.link === path)
+  const withoutExtension = (str: string) => str.replace(/(\.(md|html)|\/)$/, '')
+  const currentLinkIndex = candidates.findIndex(
+    (v) => withoutExtension(v.link) === withoutExtension(pagePath)
+  )
 
   const nextAndPrev: { prev?: SideBarLink; next?: SideBarLink } = {}
 
