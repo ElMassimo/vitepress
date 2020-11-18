@@ -1,3 +1,16 @@
+## [0.7.5-rc0](https://github.com/vuejs/vitepress/compare/v0.7.4...v0.7.5-rc0) (2020-11-18)
+
+### Bug Fixes
+
+- Fix next and previous link calculation to handle .html suffix and trailing slashes. ([92fc89f](https://github.com/elmassimo/vitepress/commit/92fc89f))
+- fix edit link and prev and next links display ([#97](https://github.com/vuejs/vitepress/issues/97)) ([c3b7172](https://github.com/vuejs/vitepress/commit/c3b71729513592112e233165782e60c9c5b425c4))
+- **\$theme-default:** display header-anchor links when using keyboard navigation ([ddc3640](https://github.com/vuejs/vitepress/commit/ddc3640ce66f606894b31e1b7ebeacaaf7b0f1b5))
+- **theme:** show top part of scrollbar in sidebar ([#129](https://github.com/vuejs/vitepress/issues/129)) ([1ba209a](https://github.com/vuejs/vitepress/commit/1ba209a4d2b606bee1abb7ec1d383467d98cf198))
+
+### Features
+
+- add ability to configure markdown options ([#127](https://github.com/vuejs/vitepress/issues/127)) ([#128](https://github.com/vuejs/vitepress/issues/128)) ([463a03a](https://github.com/vuejs/vitepress/commit/463a03a9815ce8fc9f55293dda07bc211ef4f62b))
+
 ## [0.7.4](https://github.com/vuejs/vitepress/compare/v0.7.3...v0.7.4) (2020-11-11)
 
 ### Bug Fixes
