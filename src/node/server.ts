@@ -170,7 +170,7 @@ function getNextAndPrev(themeConfig: any, pagePath: string) {
     )
   })
 
-  const withoutExtension = (str: string) => str.replace(/(\.(md|html)|\/)$/, '')
+  const withoutExtension = (str: string) => str.replace(/(\.(md|html))|\/$/, '')
   const currentLinkIndex = candidates.findIndex(
     (v) => withoutExtension(v.link) === withoutExtension(pagePath)
   )
@@ -186,7 +186,7 @@ function getNextAndPrev(themeConfig: any, pagePath: string) {
   }
 
   if (themeConfig.prevLinks !== false && currentLinkIndex > 0) {
-    nextAndPrev.next = candidates[currentLinkIndex - 1]
+    nextAndPrev.prev = candidates[currentLinkIndex - 1]
   }
 
   return nextAndPrev
