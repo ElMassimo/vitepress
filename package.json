@@ -1,6 +1,6 @@
 {
   "name": "massimopress",
-  "version": "0.7.5-rc2",
+  "version": "0.7.5-rc3",
   "description": "Vite & Vue powered static site generator",
   "main": "dist/node/index.js",
   "typings": "types/index.d.ts",

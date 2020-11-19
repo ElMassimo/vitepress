@@ -1,3 +1,9 @@
+## [0.7.5-rc3](https://github.com/vuejs/vitepress/compare/v0.7.5-rc2...v0.7.5-rc3) (2020-11-19)
+
+### Bug Fixes
+
+- fix next and prev links not working ([fb9c93b](https://github.com/vuejs/vitepress/commit/fb9c93bb662c8a89491271b288124387f9c69374))
+
 ## [0.7.5-rc2](https://github.com/vuejs/vitepress/compare/v0.7.5-rc0...v0.7.5-rc2) (2020-11-18)
 
 ### Bug Fixes
