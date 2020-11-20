@@ -1,3 +1,5 @@
+## [0.7.5-rc4](https://github.com/vuejs/vitepress/compare/v0.7.5-rc3...v0.7.5-rc4) (2020-11-20)
+
 ## [0.7.5-rc3](https://github.com/vuejs/vitepress/compare/v0.7.5-rc2...v0.7.5-rc3) (2020-11-19)
 
 ### Bug Fixes
