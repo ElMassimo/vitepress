@@ -31,6 +31,7 @@ const getDefaultRoute = (): Route => ({
 
 interface PageModule {
   __pageData: string
+  __pageImage: string
   default: Component
 }
 
@@ -70,14 +71,17 @@ export function createRouter(
       if (latestPendingPath === pendingPath) {
         latestPendingPath = null
 
-        const { default: comp, __pageData } = page as PageModule
+        const { default: comp, __pageData, __pageImage } = page as PageModule
         if (!comp) {
           throw new Error(`Invalid route component: ${comp}`)
         }
 
         route.path = pendingPath
         route.component = markRaw(comp)
-        route.data = readonly(JSON.parse(__pageData)) as PageData
+        route.data = readonly({
+          ...JSON.parse(__pageData),
+          image: __pageImage
+        }) as PageData
 
         if (inBrowser) {
           nextTick(() => {

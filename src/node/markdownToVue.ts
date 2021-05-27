@@ -37,7 +37,8 @@ export function createMarkdownToVueRenderFn(
     const start = Date.now()
 
     const { content, data: frontmatter } = matter(src)
-    let { html, data } = md.render(content)
+
+    let { html, data } = md.render(content, { frontmatter, relativePath })
 
     // avoid env variables being replaced by vite
     html = html
@@ -101,9 +102,21 @@ const defaultExportRE = /((?:^|\n|;)\s*)export(\s*)default/
 const namedDefaultExportRE = /((?:^|\n|;)\s*)export(.+)as(\s*)default/
 
 function genPageDataCode(tags: string[], data: PageData) {
+  const { frontmatter, relativePath } = data
+
+  const imagePath =
+    frontmatter.image === false
+      ? false
+      : frontmatter.image || `@images/${relativePath.replace('.md', '.jpg')}`
+
+  const imageExport = imagePath
+    ? `export { default as __pageImage } from '${imagePath}'`
+    : 'export const __pageImage = false'
+
+  console.log('genPageDataCode => imagePath', imagePath)
   const code = `\nexport const __pageData = ${JSON.stringify(
     JSON.stringify(data)
-  )}`
+  )}\n${imageExport}`
 
   const existingScriptIndex = tags.findIndex((tag) => {
     return scriptRE.test(tag) && !scriptSetupRE.test(tag)
